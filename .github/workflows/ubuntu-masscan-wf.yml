@@ -49,6 +49,8 @@ jobs:
         docker inspect -f '{{.Config.Entrypoint}}' ${name}:${version}
         echo "################## ENTRYPOINT ##################"
         # the input device is not a TTY
-        #docker run  -it --rm --net=host ${name}:${version} -h 
-        docker run ${name}:${version} masscan -h
-        docker run --rm --net=host ${name}:${version} masscan -h 
+        #docker run  -it --rm --net=host ${name}:${version} -h
+        #FAIL: unknown command-line parameter "masscan"
+        #docker run ${name}:${version} masscan -h  
+        docker run  -it --rm --net=host ${name}:${version} --regress
+        
