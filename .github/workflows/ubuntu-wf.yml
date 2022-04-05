@@ -35,12 +35,13 @@ jobs:
       run: |
         #Ndiff is also used by the Zenmap GUI to compare scan results
         #https://nmap.org/ndiff/
-        sudo apt-get install ndiff  -y          
-    - name: "run zenmap"
-      run: |
-        #nmap GUI
-        #https://nmap.org/zenmap/
-        sudo apt-get install zenmap -y      
+        sudo apt-get install ndiff  -y  
+    # Package 'zenmap' has no installation candidat                
+    # - name: "run zenmap"
+    #   run: |
+    #     #nmap GUI
+    #     #https://nmap.org/zenmap/
+    #     sudo apt-get install zenmap -y      
     - name: "run masscan  "
       run: |
         sudo apt-get install masscan   -y   
