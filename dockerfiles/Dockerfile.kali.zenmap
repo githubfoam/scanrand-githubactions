@@ -1,0 +1,15 @@
+FROM kalilinux/kali-rolling
+LABEL org.opencontainers.image.authors="githubfoam"
+
+
+RUN set -xe && \
+    export DEBIAN_FRONTEND=noninteractive && \
+    apt-get -qq update && \
+    apt-get -qqy upgrade && \
+    
+
+
+RUN set -xe && \
+    #Remove Alien
+    apt-get remove alien -y && \
+    cd ~/Downloads
