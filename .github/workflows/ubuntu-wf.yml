@@ -31,9 +31,15 @@ jobs:
         cat /etc/issue
         cat /etc/os-release
         sudo apt-get install -y neofetch && neofetch 
+    - name: "run Ndiff "
+      run: |
+        #Ndiff is also used by the Zenmap GUI to compare scan results
+        #https://nmap.org/ndiff/
+        sudo apt-get install ndiff  -y          
     - name: "run zenmap"
       run: |
         #nmap GUI
+        #https://nmap.org/zenmap/
         sudo apt-get install zenmap -y      
     - name: "run masscan  "
       run: |
