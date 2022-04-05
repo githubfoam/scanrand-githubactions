@@ -5,11 +5,27 @@ LABEL org.opencontainers.image.authors="githubfoam"
 RUN set -xe && \
     export DEBIAN_FRONTEND=noninteractive && \
     apt-get -qq update && \
-    apt-get -qqy upgrade && \
-    
-
+    apt-get -qqy upgrade
 
 RUN set -xe && \
     #Remove Alien
     apt-get remove alien -y && \
-    cd ~/Downloads
+    cd ~/Downloads && \
+    wget http://archive.ubuntu.com/ubuntu/pool/main/a/alien/alien_8.90_all.deb && \
+    wget https://nmap.org/dist/zenmap-7.92-1.noarch.rpm && \
+    wget http://archive.ubuntu.com/ubuntu/pool/universe/p/pygtk/python-gtk2_2.24.0-5.1ubuntu2_amd64.deb && \
+    wget http://azure.archive.ubuntu.com/ubuntu/pool/universe/p/pygobject-2/python-gobject-2_2.28.6-14ubuntu1_amd64.deb && \
+    wget http://security.ubuntu.com/ubuntu/pool/universe/p/pycairo/python-cairo_1.16.2-2ubuntu2_amd64.deb && \
+    dpkg -i python-gobject-2_2.28.6-14ubuntu1_amd64.deb && \
+    dpkg -i dpkg -i python-cairo_1.16.2-2ubuntu2_amd64.deb && \
+    dpkg -i python-gtk2_2.24.0-5.1ubuntu2_amd64.deb && \
+    dpkg -i alien_8.90_all.deb && \ 
+    alien zenmap zenmap-*.rpm && \ 
+    dpkg -i zenmap-*.deb
+    #run zenmap
+    #zenmap
+    #uninstall zenmap
+    # dpkg -r zenmap
+
+ENTRYPOINT ["zenmap"]
+CMD ["-h"]

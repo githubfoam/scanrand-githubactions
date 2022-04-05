@@ -18,7 +18,7 @@ jobs:
       version: "latest"
       name: "ubuntu/scanrand"
       dockerfiledir: "dockerfiles"
-      dockerfilename: "Dockerfile.ubuntu.16.04.scanrand"
+      # dockerfilename: "Dockerfile.ubuntu.16.04.scanrand"
       dockerfilename: "Dockerfile.kali.zenmap"
     steps:
     - uses: actions/checkout@v2
