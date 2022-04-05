@@ -34,7 +34,13 @@ jobs:
     - name: "run zenmap"
       run: |
         #nmap GUI
-        apt-get install zenmap -y        
+        sudo apt-get install zenmap -y      
+    - name: "run masscan  "
+      run: |
+        sudo apt-get install masscan   -y   
+    - name: "run unicornscan "
+      run: |
+        sudo apt-get install unicornscan  -y                  
     - name: "build scanrand with ubuntu 16.04 "
       run: |
         # destroyed afterwards (use --rm )
