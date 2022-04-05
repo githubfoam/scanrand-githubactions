@@ -54,6 +54,6 @@ jobs:
         #docker run  -it --rm --net=host ${name}:${version} --regress        
         #FAIL: unknown command-line parameter "masscan"
         docker run ${name}:${version} --regress
-        docker run ${name}:${version} -h  
+        #docker run ${name}:${version} -h  
 
         
