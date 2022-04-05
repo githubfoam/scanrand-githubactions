@@ -7,6 +7,7 @@ RUN set -xe && \
     apt-get -qq update && \
     apt-get -qqy upgrade
 
+#install zenmap, nmap GUI
 RUN set -xe && \
     #Remove Alien
     apt-get remove alien -y && \
@@ -26,6 +27,11 @@ RUN set -xe && \
     #zenmap
     #uninstall zenmap
     # dpkg -r zenmap
+
+#install nmap ndiff
+RUN set -xe && \
+    #Remove Alien
+    apt-get install nmap ndiff -y && \
 
 ENTRYPOINT ["zenmap"]
 CMD ["-h"]

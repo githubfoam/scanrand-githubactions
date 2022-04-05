@@ -8,7 +8,5 @@ RUN set -xe && \
     export DEBIAN_FRONTEND=noninteractive && \
     apt-get -qq update && apt-get -qqy upgrade
 
-# install zmap build dependencies
 RUN set -xe && \
-    #s://www.doxpara.com/paketto/paketto-1.10.tar.gz: not found
-    http://www.doxpara.com/paketto/paketto-${PAKETTO_VERSION}.tar.gz
+    apt-get install masscan -y

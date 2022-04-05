@@ -18,8 +18,8 @@ jobs:
       version: "latest"
       name: "ubuntu/scanrand"
       dockerfiledir: "dockerfiles"
-      # dockerfilename: "Dockerfile.ubuntu.16.04.scanrand"
-      dockerfilename: "Dockerfile.kali.zenmap"
+      dockerfilename: "Dockerfile.ubuntu.16.04.scanrand"
+      # dockerfilename: "Dockerfile.kali.zenmap"
     steps:
     - uses: actions/checkout@v2
     - name: "os fingerprinting"
@@ -31,23 +31,11 @@ jobs:
         cat /etc/issue
         cat /etc/os-release
         sudo apt-get install -y neofetch && neofetch 
-    - name: "run Ndiff "
-      run: |
-        #Ndiff is also used by the Zenmap GUI to compare scan results
-        #https://nmap.org/ndiff/
-        sudo apt-get install ndiff  -y  
-    # Package 'zenmap' has no installation candidat                
-    # - name: "run zenmap"
+    # - name: "run Ndiff "
     #   run: |
-    #     #nmap GUI
-    #     #https://nmap.org/zenmap/
-    #     sudo apt-get install zenmap -y      
-    - name: "run masscan  "
-      run: |
-        sudo apt-get install masscan   -y   
-    - name: "run unicornscan "
-      run: |
-        sudo apt-get install unicornscan  -y                  
+    #     #Ndiff is also used by the Zenmap GUI to compare scan results
+    #     #https://nmap.org/ndiff/
+    #     sudo apt-get install ndiff  -y                       
     - name: "build scanrand with ubuntu 16.04 "
       run: |
         # destroyed afterwards (use --rm )
